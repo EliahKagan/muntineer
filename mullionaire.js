@@ -2,32 +2,34 @@
     'use strict';
 
     const inputs = {};
-    const paneCountElement = document.getElementById('pane-count');
-    const paneWidthElement = document.getElementById('pane-width');
+    const paneCountField = document.getElementById('pane-count');
+    const paneWidthField = document.getElementById('pane-width');
 
-    function getValue(element) {
-        const isNumber = (element === paneCountElement ? Number.isSafeInteger
-                                                       : Number.isFinite);
-
-        const value = Number(element.value);
-
-        return isNumber(value) && value > 0 ? value : NaN;
+    function getNumberKindValidator(mustBeInteger) {
+        return mustBeInteger ? Number.isSafeInteger : Number.isFinite;
     }
 
-    function updateBadness(element, value) {
-        if (Number.isNaN(value)) {
+    function isValid(value, mustBeInteger) {
+        return getNumberKindValidator(mustBeInteger)(value) && value > 0;
+    }
+
+    function parse(field) {
+        const value = Number(field.value);
+        return isValid(value, field === paneCountField) ? value : NaN;
+    }
+
+    function setBadness(element, isBad) {
+        if (isBad) {
             element.classList.add('bad');
-            return true;
         } else {
             element.classList.remove('bad');
-            return false;
         }
     }
 
-    function updateInput(element) {
-        const value = getValue(element);
-        inputs[element.id] = value;
-        updateBadness(element.parentElement, value);
+    function updateInput(field) {
+        const value = parse(field);
+        inputs[field.id] = value;
+        setBadness(field.parentElement, Number.isNaN(value));
     }
 
     function tryComputePaneWidth() {
@@ -37,18 +39,17 @@
         const m = inputs['mullion-width'];
 
         const p = (w - 2 * c + (1 - N) * m) / N;
-
-        paneWidthElement.innerText =
-            (updateBadness(paneWidthElement, p) ? "???" : p.toPrecision(4));
+        setBadness(paneWidthField, !isValid(p, false));
+        paneWidthField.innerText = (Number.isNaN(p) ? '???' : p.toFixed(4));
     }
 
-    for (const element of document.getElementsByTagName('input')) {
-        element.addEventListener('input', function(e) {
+    for (const field of document.getElementsByTagName('input')) {
+        field.addEventListener('input', function(e) {
             updateInput(e.target);
             tryComputePaneWidth();
         });
 
-        updateInput(element);
+        updateInput(field);
     }
 
     tryComputePaneWidth();
