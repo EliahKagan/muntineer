@@ -1,0 +1,60 @@
+html {
+  font-size: 1.4em;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Selawik', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 0 10px;
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+
+svg {
+  border: 1px dotted gray;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  border: 2px dotted transparent;
+  float: left;
+  width: 11rem;
+}
+
+fieldset.bad>legend {
+  border-color: red;
+}
+
+input {
+  font-size: 1rem;
+  text-align: right;
+  width: 3.5rem;
+}
+
+fieldset.bad>input {
+  color: red;
+}
+
+.leader {
+  margin-bottom: 20px;
+}
+
+#pane-width {
+  border: 1px dotted gray;
+  color: darkgreen;
+  font-family: sans-serif;
+}
+
+#pane-width.bad {
+  color: red;
+}
