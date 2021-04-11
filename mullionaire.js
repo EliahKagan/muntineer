@@ -1,21 +1,37 @@
 (function() {
     'use strict';
 
+    const COLORS = {
+        CASING: '#414a4c',
+        MULLION: '#414a4c', // For now, casing and mullion have the same color.
+        PANE: '#d7ecff',
+    };
+
+    const SCALABLE_PARAMETERS = [
+        'totalHeight',
+        'totalWidth',
+        'casing',
+        'mullion',
+        'paneWidth',
+        'paneHeight',
+    ];
+
     const inputs = {};
-    const paneCountField = document.getElementById('pane-count');
-    const paneWidthField = document.getElementById('pane-width');
+    const panesField = document.getElementById('panes');
+    const paneWidthField = document.getElementById('paneWidth');
+    let drawing = null;
 
     function getNumberKindValidator(mustBeInteger) {
         return mustBeInteger ? Number.isSafeInteger : Number.isFinite;
     }
 
-    function isValid(value, mustBeInteger) {
+    function isValid(value, mustBeInteger = false) {
         return getNumberKindValidator(mustBeInteger)(value) && value > 0;
     }
 
     function parse(field) {
         const value = Number(field.value);
-        return isValid(value, field === paneCountField) ? value : NaN;
+        return isValid(value, field === panesField) ? value : NaN;
     }
 
     function setBadness(element, isBad) {
@@ -32,25 +48,83 @@
         setBadness(field.parentElement, Number.isNaN(value));
     }
 
-    function tryComputePaneWidth() {
-        const w = inputs['window-width'];
-        const N = inputs['pane-count'];
-        const c = inputs['casing-width'];
-        const m = inputs['mullion-width'];
+    function updateResult() {
+        inputs.paneWidth =
+            (inputs.totalWidth
+             - 2 * inputs.casing
+             + (1 - inputs.panes) * inputs.mullion) / inputs.panes;
 
-        const p = (w - 2 * c + (1 - N) * m) / N;
-        setBadness(paneWidthField, !isValid(p, false));
-        paneWidthField.innerText = (Number.isNaN(p) ? '???' : p.toFixed(4));
+        setBadness(paneWidthField, !isValid(inputs.paneWidth));
+
+        paneWidthField.innerText = (Number.isNaN(inputs.paneWidth)
+                                        ? '???'
+                                        : inputs.paneWidth.toFixed(4));
+    }
+
+    function getScaledDrawingParameters() {
+        const params = {};
+
+        for (const name of SCALABLE_PARAMETERS) {
+            params[name] = inputs[name] * inputs.scale;
+        }
+
+        return params;
+    }
+
+    function resetDrawing(scaled) {
+        if (drawing === null) {
+            drawing = SVG().addTo('#drawing-div');
+        } else {
+            drawing.clear();
+        }
+
+        drawing.size(scaled.totalWidth, scaled.totalHeight);
+    }
+
+    function populateDrawing(scaled) {
+        drawing.rect('100%', '100%').fill(COLORS.CASING);
+
+        drawing.rect(scaled.totalWidth - scaled.casing * 2,
+                     scaled.totalHeight - scaled.casing * 2)
+               .move(scaled.casing, scaled.casing)
+               .fill(COLORS.MULLION);
+
+        const stride = scaled.paneWidth + scaled.mullion;
+
+        for (let i = 0; i < inputs.panes; ++i) {
+            drawing.rect(scaled.paneWidth, scaled.paneHeight)
+                   .move(scaled.casing + i * stride, scaled.casing)
+                   .fill(COLORS.PANE);
+        }
+    }
+
+    function updateDrawing() {
+        inputs.paneHeight = inputs.totalHeight - 2 * inputs.casing;
+
+        if (!Number.isNaN(inputs.scale) && isValid(inputs.paneHeight)
+                                        && isValid(inputs.paneWidth)) {
+            const scaled = getScaledDrawingParameters();
+            resetDrawing(scaled);
+            populateDrawing(scaled);
+            setBadness(drawing.node, false);
+        } else if (drawing !== null) {
+            setBadness(drawing.node, true);
+        }
+    }
+
+    function updateOutput() {
+        updateResult();
+        updateDrawing();
     }
 
     for (const field of document.getElementsByTagName('input')) {
         field.addEventListener('input', function(e) {
             updateInput(e.target);
-            tryComputePaneWidth();
+            updateOutput();
         });
 
         updateInput(field);
     }
 
-    tryComputePaneWidth();
+    updateOutput();
 })();

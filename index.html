@@ -4,45 +4,55 @@
   <head>
     <meta charset="utf-8">
     <title>mullionaire</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/selawik">
     <link rel="stylesheet" href="mullionaire.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"
+            integrity="sha512-p3Tp2zn+wApBreZCgRkmMwnfpN8MUPXzzOihXx7iGYXqE7t6m9drY8HeyMeeFuDWiTFKrGUrq3jpbT0vX6zY/Q=="
+            crossorigin="anonymous"
+            defer></script>
     <script src="mullionaire.js" defer></script>
   </head>
   <body>
     <h1>mullionaire</h1>
-    <p>Visualizing window-pane algebra.</p>
-    <svg id="drawing"></svg>
-    <form class="leader">
-      <fieldset class="bad">
-        <legend>Scale (for drawing):</legend>
-        <input id="scale" type="text" value="1">
-      </fieldset>
-      <fieldset>
-        <legend>Total window height:</legend>
-        <input id="window-height" type="text" value="30">
-      </fieldset>
-    </form>
-    <form>
-      <fieldset>
-        <legend>Total window width (<var>w</var>&hairsp;):</legend>
-        <input id="window-width" type="text" value="150">
-      </fieldset>
-      <fieldset>
-        <legend>Number of panes (<var>N</var>&hairsp;):</legend>
-        <input id="pane-count" type="text" value="3">
-      </fieldset>
-      <fieldset>
-        <legend>Width of casing (<var>c</var>&hairsp;):</legend>
-        <input id="casing-width" type="text" value="10">
-      </fieldset>
-      <fieldset>
-        <legend>Width of mullion (<var>m</var>&hairsp;):</legend>
-        <input id="mullion-width" type="text" value="7">
-      </fieldset>
+    <p><b>visualizing window-pane algebra</b></p>
+    <section>
+      <form>
+        <fieldset>
+          <legend>Scale (for drawing):</legend>
+          <input id="scale" type="text" value="5">
+        </fieldset>
+        <fieldset>
+          <legend>Total window height:</legend>
+          <input id="totalHeight" type="text" value="40">
+        </fieldset>
+      </form>
+      <div id="drawing-div"></div>
       <p>
-        So the width of each pane (<var>p</var>&hairsp;) is
-        <strong id="pane-width">???</strong>.
+        The width of each pane (<var>p</var>&hairsp;) is
+        <strong id="paneWidth">???</strong>. Adjust these variables to change
+        it:
       </p>
-    </form>
+      <form>
+        <fieldset>
+          <legend>Total window width (<var>w</var>&hairsp;):</legend>
+          <input id="totalWidth" type="text" value="180">
+        </fieldset>
+        <fieldset>
+          <legend>Number of panes (<var>N</var>&hairsp;):</legend>
+          <input id="panes" type="text" value="3">
+        </fieldset>
+        <fieldset>
+          <legend>Width of casing (<var>c</var>&hairsp;):</legend>
+          <input id="casing" type="text" value="4">
+        </fieldset>
+        <fieldset>
+          <legend>Width of mullion (<var>m</var>&hairsp;):</legend>
+          <input id="mullion" type="text" value="3">
+        </fieldset>
+      </form>
+    </section>
   </body>
 </html>

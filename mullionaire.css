@@ -4,7 +4,8 @@ html {
 }
 
 body {
-  font-family: 'Selawik', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background-color: #fefefe;
+  font-family: 'Selawik', 'Segoe UI', 'Roboto', '-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
   margin: 0 auto;
   max-width: 40rem;
@@ -17,8 +18,8 @@ h1 {
   margin-bottom: 0;
 }
 
-svg {
-  border: 1px dotted gray;
+section {
+  margin-top: 1.5rem;
 }
 
 fieldset {
@@ -45,16 +46,24 @@ fieldset.bad>input {
   color: red;
 }
 
-.leader {
-  margin-bottom: 20px;
+svg {
+  border: 5px dotted darkgreen;
 }
 
-#pane-width {
+svg.bad {
+  border-color: red;
+}
+
+b {
+  font-weight: 400;
+}
+
+#paneWidth {
   border: 1px dotted gray;
   color: darkgreen;
   font-family: sans-serif;
 }
 
-#pane-width.bad {
+#paneWidth.bad {
   color: red;
 }
