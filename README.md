@@ -27,7 +27,9 @@ It is [licensed](LICENSE) under [0BSD](https://spdx.org/licenses/0BSD.html)
 (which is also called the [Free Public License
 1.0.0](https://opensource.org/licenses/0BSD)).
 
-To use a local copy, clone the repository and open `index.html` in a web
+[**Try muntineer on the web here.**](https://eliahkagan.github.io/muntineer/)
+
+Or to use a local copy, clone this repository and open `index.html` in a web
 browser.
 
 ## Dependencies
@@ -46,6 +48,7 @@ The dependencies, and their licenses, are:
 - [normalize.css](https://necolas.github.io/normalize.css/) 8.0.1 by Nicolas
   Gallagher and Jonathan Neal ([MIT
   License](https://github.com/necolas/normalize.css/blob/8.0.1/LICENSE.md))
+- [*Fork me on GitHub* CSS ribbon](https://simonwhitaker.github.io/github-fork-ribbon-css/) 0.2.3 by Simon Whitaker ([MIT License](https://github.com/simonwhitaker/github-fork-ribbon-css/blob/0.2.3/LICENSE))
 - [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik), a
   font family designed by Aaron Bell for Microsoft ([SIL OFL
   1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
