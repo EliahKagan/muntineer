@@ -35,7 +35,7 @@ browser.
 All dependencies are retrieved from a CDN so everything should just work, so
 long as you're connected to the internet.
 
-Please note that while this project is licensed under CC0 (which is a
+Please note that while this project is licensed under 0BSD (which is a
 &ldquo;public-domain equivalent&rdquo; license), its dependencies are not,
 though they are all free software.
 
