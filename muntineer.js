@@ -18,7 +18,7 @@
 
     const COLORS = {
         CASING: '#414a4c',
-        MULLION: '#414a4c', // For now, casing and mullion have the same color.
+        MUNTIN: '#414a4c', // For now, casing and muntin have the same color.
         PANE: '#d7ecff',
     };
 
@@ -26,7 +26,7 @@
         'totalHeight',
         'totalWidth',
         'casing',
-        'mullion',
+        'muntin',
         'paneWidth',
         'paneHeight',
     ];
@@ -67,7 +67,7 @@
         inputs.paneWidth =
             (inputs.totalWidth
              - 2 * inputs.casing
-             + (1 - inputs.panes) * inputs.mullion) / inputs.panes;
+             + (1 - inputs.panes) * inputs.muntin) / inputs.panes;
 
         setBadness(paneWidthField, !isValid(inputs.paneWidth));
 
@@ -102,9 +102,9 @@
         drawing.rect(scaled.totalWidth - scaled.casing * 2,
                      scaled.totalHeight - scaled.casing * 2)
                .move(scaled.casing, scaled.casing)
-               .fill(COLORS.MULLION);
+               .fill(COLORS.MUNTIN);
 
-        const stride = scaled.paneWidth + scaled.mullion;
+        const stride = scaled.paneWidth + scaled.muntin;
 
         for (let i = 0; i < inputs.panes; ++i) {
             drawing.rect(scaled.paneWidth, scaled.paneHeight)

@@ -1,5 +1,5 @@
 <!--
-  This file is part of mullionarie, which visualizes window-pane algebra.
+  This file is part of muntineer, which visualizes window-pane algebra.
 
   Copyright (c) 2021 Eliah Kagan
 
@@ -15,12 +15,12 @@
   PERFORMANCE OF THIS SOFTWARE.
 -->
 
-# mullionaire - visualizing window-pane algebra
+# muntineer - visualizing window-pane algebra
 
 *Written in 2021 by Eliah Kagan &lt;degeneracypressure@gmail.com&gt;.*
 
-**mullionaire** computes the width of window panes given total window width,
-number of panes in a row, and casing and mullion thicknesses, and it
+**muntineer** computes the width of window panes given total window width,
+number of panes in a row, and casing and muntin thicknesses, and it
 illustrates the computation with an SVG visualization.
 
 It is [licensed](LICENSE) under [0BSD](https://spdx.org/licenses/0BSD.html)
@@ -47,7 +47,7 @@ The dependencies, and their licenses, are:
 
 ## Known Bugs
 
-The major bug is related to accessibility: red outlines, and for the SVG image
+**A major bug impacts accessibility:** red outlines, and for the SVG image
 *the distinction between a green or red outline*, is currently the only way the
 interface informs the user of malformed or unusable input values. To fix this,
 another way to inform the user of this should be added, and (whether or not the
@@ -65,3 +65,8 @@ trouble, with a polyfill or two.
 
 Though not really a bug, it would be nicer if this supported multiple rows of
 panes.
+
+Maybe this should have a more fun title. I had wanted to call this
+&ldquo;muntineer,&rdquo; which is a far superior pun to
+&ldquo;muntineer.&rdquo; Then I learned that the pieces between separate panes
+in the *same* window fixture are muntins, not mullions. &#128575;
