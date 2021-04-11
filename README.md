@@ -32,9 +32,12 @@ browser.
 
 ## Dependencies
 
-All dependencies are retrieved from a CDN so everything should just work, so long as you're connected to the internet.
+All dependencies are retrieved from a CDN so everything should just work, so
+long as you're connected to the internet.
 
-Please note that while this project is licensed under CC0 (which is a &ldquo;public-domain equivalent&rdquo; license), its dependencies are not, though they are all free software.
+Please note that while this project is licensed under CC0 (which is a
+&ldquo;public-domain equivalent&rdquo; license), its dependencies are not,
+though they are all free software.
 
 The dependencies, and their licenses, are:
 
@@ -43,7 +46,9 @@ The dependencies, and their licenses, are:
 - [normalize.css](https://necolas.github.io/normalize.css/) 8.0.1 by Nicolas
   Gallagher and Jonathan Neal ([MIT
   License](https://github.com/necolas/normalize.css/blob/8.0.1/LICENSE.md))
-- [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik), a font family designed by Aaron Bell for Microsoft ([SIL OFL 1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
+- [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik), a
+  font family designed by Aaron Bell for Microsoft ([SIL OFL
+  1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
 
 ## Known Bugs
 
