@@ -132,12 +132,13 @@
         updateDrawing();
     }
 
-    for (const field of document.getElementsByTagName('input')) {
-        field.addEventListener('input', function(e) {
-            updateInput(e.target);
-            updateOutput();
-        });
+    function handleInput(e) {
+        updateInput(e.target);
+        updateOutput();
+    }
 
+    for (const field of document.getElementsByTagName('input')) {
+        field.addEventListener('input', handleInput);
         updateInput(field);
     }
 
