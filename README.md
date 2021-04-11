@@ -1,5 +1,5 @@
 <!--
-  This file is part of mullionarie, which visualizes window-pane algebra.
+  This file is part of mullionaire, which visualizes window-pane algebra.
 
   Copyright (c) 2021 Eliah Kagan
 
