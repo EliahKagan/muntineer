@@ -72,6 +72,6 @@ Though not really a bug, it would be nicer if this supported multiple rows of
 panes.
 
 Maybe this should have a more fun title. I had wanted to call this
-&ldquo;muntineer,&rdquo; which is a far superior pun to
+&ldquo;mullionaire,&rdquo; which is a far superior pun to
 &ldquo;muntineer.&rdquo; Then I learned that the pieces between separate panes
 in the *same* window fixture are muntins, not mullions. &#128575;
