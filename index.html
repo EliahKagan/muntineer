@@ -17,9 +17,10 @@
   PERFORMANCE OF THIS SOFTWARE.
 -->
 
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.86">
     <title>muntineer</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -43,7 +44,7 @@
        title="Fork me on GitHub">Fork me on GitHub</a>
     <h1>muntineer</h1>
     <p><b>visualizing window-pane algebra</b></p>
-    <section>
+    <main>
       <form>
         <fieldset>
           <legend>Scale (for drawing):</legend>
@@ -57,8 +58,8 @@
       <div id="drawing-div"></div>
       <p>
         The width of each pane (<var>p</var>&hairsp;) is
-        <strong id="paneWidth">???</strong>. Adjust these variables to change
-        it:
+        <strong id="paneWidth" class="bad">???</strong>. Adjust these variables
+        to change it:
       </p>
       <form>
         <fieldset>
@@ -78,6 +79,6 @@
           <input id="muntin" type="text" value="3">
         </fieldset>
       </form>
-    </section>
+    </main>
   </body>
 </html>

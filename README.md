@@ -66,11 +66,6 @@ height is too small (smaller than twice the casing thickness), the &ldquo;Total
 window height&rdquo; field should be marked as having an unusable value, but
 currently this is not done.
 
-This ought to be made usable from mobile devices with small screens.
-
-I guess this could be made to work on Internet Explorer without too much
-trouble, with a polyfill or two.
-
 Though not really a bug, it would be nicer if this supported multiple rows of
 panes.
 
