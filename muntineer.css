@@ -75,6 +75,11 @@ b {
   font-weight: 400;
 }
 
+.katex {
+  color: #444444;
+  font-size: 1.1em;
+}
+
 #paneWidth {
   border: 1px dotted gray;
   color: darkgreen;

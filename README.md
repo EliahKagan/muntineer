@@ -45,9 +45,9 @@ The dependencies, and their licenses, are:
 
 - [SVG.js](https://svgjs.com) 3.0.16 by Wout Fierens ([MIT
   License](https://github.com/svgdotjs/svg.js/blob/3.0.16/LICENSE.txt))
-- [MathJax](https://www.mathjax.org/) 3.1.2 by Davide Cervone and Volker Sorge
-  ([Apache License, Version
-  2.0](https://github.com/mathjax/MathJax-src/blob/3.1.2/LICENSE))
+- [KaTeX](https://katex.org/) 0.13.2 from Khan Academy and other contributors,
+  created by Emily Eisenberg and Sophie Alpert ([MIT
+  License](https://github.com/KaTeX/KaTeX/blob/v0.13.2/LICENSE))
 - [normalize.css](https://necolas.github.io/normalize.css/) 8.0.1 by Nicolas
   Gallagher and Jonathan Neal ([MIT
   License](https://github.com/necolas/normalize.css/blob/8.0.1/LICENSE.md))

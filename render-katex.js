@@ -14,14 +14,10 @@
 // CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 (function () {
-    'use strict';
-
-    window.MathJax = {
-        options: {
-            skipHtmlTags: ['svg'],
-        },
-        tex: {
-            inlineMath: [['$', '$']],
-        },
-    };
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+        ],
+    });
 })();
