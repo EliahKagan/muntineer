@@ -14,6 +14,8 @@
 // CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 (function () {
+    'use strict';
+
     renderMathInElement(document.body, {
         delimiters: [
             {left: '$$', right: '$$', display: true},
