@@ -32,6 +32,11 @@
           integrity="sha512-TktJbycEG5Van9KvrSHFUcYOKBroD7QCYkEe73HAutODCw9QTFcvF6fuxioYM1h6THNudK1GjVidazj6EslK4A=="
           crossorigin="anonymous">
     <link rel="stylesheet" href="muntineer.css">
+    <script src="mathjax-config.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-chtml.js"
+            integrity="sha256-+nfSJ1LiSvANSK3wvi6FjM+oFwoIQvURU1frozp5z6o="
+            crossorigin="anonymous"
+            defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"
             integrity="sha512-p3Tp2zn+wApBreZCgRkmMwnfpN8MUPXzzOihXx7iGYXqE7t6m9drY8HeyMeeFuDWiTFKrGUrq3jpbT0vX6zY/Q=="
             crossorigin="anonymous"
@@ -46,6 +51,7 @@
     <h1>muntineer</h1>
     <p><b>visualizing window-pane algebra</b></p>
     <main>
+      <p>$$Np + 2c + (N - 1)m = w$$</p>
       <form>
         <fieldset>
           <legend>Scale (for drawing):</legend>
@@ -58,25 +64,25 @@
       </form>
       <div id="drawing-div"></div>
       <p>
-        The width of each pane (<var>p</var>&hairsp;) is
+        The width of each pane ($p$) is
         <strong id="paneWidth" class="bad">???</strong>. Adjust these variables
         to change it:
       </p>
       <form>
         <fieldset>
-          <legend>Total window width (<var>w</var>&hairsp;):</legend>
+          <legend>Total window width ($w$):</legend>
           <input id="totalWidth" type="text" value="180">
         </fieldset>
         <fieldset>
-          <legend>Number of panes (<var>N</var>&hairsp;):</legend>
+          <legend>Number of panes ($N$):</legend>
           <input id="panes" type="text" value="3">
         </fieldset>
         <fieldset>
-          <legend>Width of casing (<var>c</var>&hairsp;):</legend>
+          <legend>Width of casing ($c$):</legend>
           <input id="casing" type="text" value="4">
         </fieldset>
         <fieldset>
-          <legend>Width of muntin (<var>m</var>&hairsp;):</legend>
+          <legend>Width of muntin ($m$):</legend>
           <input id="muntin" type="text" value="3">
         </fieldset>
       </form>

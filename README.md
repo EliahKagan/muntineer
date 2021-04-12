@@ -45,10 +45,16 @@ The dependencies, and their licenses, are:
 
 - [SVG.js](https://svgjs.com) 3.0.16 by Wout Fierens ([MIT
   License](https://github.com/svgdotjs/svg.js/blob/3.0.16/LICENSE.txt))
+- [MathJax](https://www.mathjax.org/) 3.1.2 by Davide Cervone and Volker Sorge
+  ([Apache License, Version
+  2.0](https://github.com/mathjax/MathJax-src/blob/3.1.2/LICENSE))
 - [normalize.css](https://necolas.github.io/normalize.css/) 8.0.1 by Nicolas
   Gallagher and Jonathan Neal ([MIT
   License](https://github.com/necolas/normalize.css/blob/8.0.1/LICENSE.md))
-- [*Fork me on GitHub* CSS ribbon](https://simonwhitaker.github.io/github-fork-ribbon-css/) 0.2.3 by Simon Whitaker ([MIT License](https://github.com/simonwhitaker/github-fork-ribbon-css/blob/0.2.3/LICENSE))
+- [*Fork me on GitHub* CSS
+  ribbon](https://simonwhitaker.github.io/github-fork-ribbon-css/) 0.2.3 by
+  Simon Whitaker ([MIT
+  License](https://github.com/simonwhitaker/github-fork-ribbon-css/blob/0.2.3/LICENSE))
 - [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik), a
   font family designed by Aaron Bell for Microsoft ([SIL OFL
   1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
