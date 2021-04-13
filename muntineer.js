@@ -16,6 +16,8 @@
 (function() {
     'use strict';
 
+    const HAIRSP = '\u200a';
+
     const COLORS = {
         CASING: '#414a4c',
         MUNTIN: '#414a4c', // For now, casing and muntin have the same color.
@@ -72,7 +74,7 @@
         setBadness(paneWidthField, !isValid(inputs.paneWidth));
 
         paneWidthField.innerText = (Number.isNaN(inputs.paneWidth)
-                                        ? '???'
+                                        ? `?${HAIRSP}?${HAIRSP}?`
                                         : inputs.paneWidth.toFixed(4));
     }
 

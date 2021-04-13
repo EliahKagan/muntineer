@@ -53,6 +53,11 @@ fieldset.bad>legend {
   border-color: red;
 }
 
+input, .result {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
 input {
   font-size: 1rem;
   text-align: right;
@@ -64,7 +69,7 @@ fieldset.bad>input {
 }
 
 svg {
-  border: 5px dotted darkgreen;
+  border: 5px dotted #00d000;
 }
 
 svg.bad {
@@ -75,17 +80,24 @@ b {
   font-weight: 400;
 }
 
+.github-fork-ribbon::after {
+  font-family: 'Selawik', 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  letter-spacing: 0.03em;
+}
+
 .katex {
   color: #444444;
   font-size: 1.1em;
 }
 
-#paneWidth {
+.result {
+  background-color: white;
   border: 1px dotted gray;
-  color: darkgreen;
-  font-family: sans-serif;
+  color: green;
+  font-size: 1.05rem;
+  vertical-align: -5%;
 }
 
-#paneWidth.bad {
+.result.bad {
   color: red;
 }
