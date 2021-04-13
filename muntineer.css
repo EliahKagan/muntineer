@@ -39,18 +39,24 @@ main {
   margin-top: 1.5rem;
 }
 
-fieldset {
-  border: none;
+form {
+  margin-left: .25rem;
 }
 
-legend {
-  border: 2px dotted transparent;
+fieldset {
+  border: 3px dotted transparent;
+  margin: .65rem;
+  padding: .1rem;
+  width: max-content;
+}
+
+fieldset.bad {
+  border-color: red;
+}
+
+label {
   float: left;
   width: 11rem;
-}
-
-fieldset.bad>legend {
-  border-color: red;
 }
 
 input, .result {
@@ -69,7 +75,8 @@ fieldset.bad>input {
 }
 
 svg {
-  border: 5px dotted #00d000;
+  border: 4px dotted #00d000;
+  padding: 1px;
 }
 
 svg.bad {
