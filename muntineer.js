@@ -35,7 +35,6 @@
 
     const inputs = {};
     const panesField = document.getElementById('panes');
-    const paneWidthField = document.getElementById('paneWidth');
     let drawing = null;
 
     function getNumberKindValidator(mustBeInteger) {
@@ -59,10 +58,14 @@
         }
     }
 
+    function setParentBadness(element, parentIsBad) {
+        setBadness(element.parentElement, parentIsBad);
+    }
+
     function updateInput(field) {
         const value = parse(field);
         inputs[field.id] = value;
-        setBadness(field.parentElement, Number.isNaN(value));
+        setParentBadness(field, Number.isNaN(value));
     }
 
     function updateResult() {
@@ -70,6 +73,8 @@
             (inputs.totalWidth
              - 2 * inputs.casing
              + (1 - inputs.panes) * inputs.muntin) / inputs.panes;
+
+        const paneWidthField = document.getElementById('paneWidth');
 
         setBadness(paneWidthField, !isValid(inputs.paneWidth));
 
@@ -118,13 +123,17 @@
     function updateDrawing() {
         inputs.paneHeight = inputs.totalHeight - 2 * inputs.casing;
 
-        if (!Number.isNaN(inputs.scale) && isValid(inputs.paneHeight)
-                                        && isValid(inputs.paneWidth)) {
+        if (!isValid(inputs.paneHeight)) {
+            setParentBadness(document.getElementById('totalHeight'), true);
+        } else if (!Number.isNaN(inputs.scale) && isValid(inputs.paneWidth)) {
             const scaled = getScaledDrawingParameters();
             resetDrawing(scaled);
             populateDrawing(scaled);
             setBadness(drawing.node, false);
-        } else if (drawing !== null) {
+            return;
+        }
+
+        if (drawing !== null) {
             setBadness(drawing.node, true);
         }
     }

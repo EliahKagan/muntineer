@@ -23,8 +23,9 @@
 number of panes in a row, and casing and muntin thicknesses, and it
 illustrates the computation with an SVG visualization.
 
-muntineer is [licensed](LICENSE) under [0BSD](https://spdx.org/licenses/0BSD.html)
-(&ldquo;Zero-Clause BSD License,&rdquo; also called the [Free Public License
+muntineer is [licensed](LICENSE) under
+[0BSD](https://spdx.org/licenses/0BSD.html) (&ldquo;Zero-Clause BSD
+License,&rdquo; also called the [Free Public License
 1.0.0](https://opensource.org/licenses/0BSD)). Its dependencies are covered
 under other licenses, detailed below.
 
@@ -47,7 +48,8 @@ The dependencies, and their licenses, are:
 
 - [SVG.js](https://svgjs.com) 3.0.16 by Wout Fierens ([MIT
   License](https://github.com/svgdotjs/svg.js/blob/3.0.16/LICENSE.txt))
-- [KaTeX](https://katex.org/) 0.13.2 from Khan Academy, by Emily Eisenberg, Sophie Alpert, et al. ([MIT
+- [KaTeX](https://katex.org/) 0.13.2 from Khan Academy, by Emily Eisenberg,
+  Sophie Alpert, et al. ([MIT
   License](https://github.com/KaTeX/KaTeX/blob/v0.13.2/LICENSE))
 - [normalize.css](https://necolas.github.io/normalize.css/) 8.0.1 by Nicolas
   Gallagher and Jonathan Neal ([MIT
@@ -70,11 +72,6 @@ distinction between a green or red outline*, are currently the only way the
 interface informs the user of malformed or unusable input values. To fix this,
 another way to inform the user of this should be added, and (whether or not the
 color scheme is also changed) the current visual hints should be secondary.
-
-When an illustration cannot be produced/updated because the specified window
-height is too small (smaller than twice the casing thickness), the &ldquo;Total
-window height&rdquo; field should be marked as having an unusable value, but
-currently this is not done.
 
 Though not really a bug, it would be nice if this supported multiple rows of
 panes.
