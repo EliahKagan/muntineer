@@ -64,15 +64,25 @@
     <main>
       <p>$$Np + 2c + (N - 1)m = w$$</p>
       <form>
-        <fieldset>
+        <fieldset data-shortname="Scale">
           <label for="scale">Scale (for drawing):</label>
           <input id="scale" type="text" value="4.5">
         </fieldset>
-        <fieldset>
+        <fieldset data-shortname="Total window height">
           <label for="totalHeight">Total window height:</label>
           <input id="totalHeight" type="text" value="40">
         </fieldset>
       </form>
+      <p id="errorMessage" class="error">
+        There was an error and the window couldn&rsquo;t be illustrated.
+        <span id="errorDetail"></span>
+        <span id="errorBug" hidden>
+          No details about the error are availalable, so there is a bug.
+        </span>
+        <span id="errorNote" hidden>
+          The illustration below is based on old inputs.
+        </span>
+      </p>
       <div id="drawing-div"></div>
       <p>
         The width of each pane ($p$) is
@@ -80,19 +90,19 @@
         Adjust these variables to change it:
       </p>
       <form>
-        <fieldset>
+        <fieldset data-shortname="Total window width">
           <label for="totalWidth">Total window width ($w$):</label>
           <input id="totalWidth" type="text" value="180">
         </fieldset>
-        <fieldset>
+        <fieldset data-shortname="Number of panes">
           <label for="panes">Number of panes ($N$):</label>
           <input id="panes" type="text" value="3">
         </fieldset>
-        <fieldset>
+        <fieldset data-shortname="Width of casing">
           <label for="casing">Width of casing ($c$):</label>
           <input id="casing" type="text" value="4">
         </fieldset>
-        <fieldset>
+        <fieldset data-shortname="Width of muntin">
           <label for="muntin">Width of muntin ($m$):</label>
           <input id="muntin" type="text" value="3">
         </fieldset>

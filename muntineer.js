@@ -33,10 +33,6 @@
         'paneHeight',
     ];
 
-    const totalHeightField = document.getElementById('totalHeight');
-    const paneWidthField = document.getElementById('paneWidth');
-    const panesField = document.getElementById('panes');
-
     const inputs = {};
     let drawing = null;
 
@@ -50,7 +46,7 @@
 
     function parse(field) {
         const value = Number(field.value);
-        return isValid(value, field === panesField) ? value : NaN;
+        return isValid(value, field.id === 'panes') ? value : NaN;
     }
 
     function setBadness(element, isBad) {
@@ -77,9 +73,11 @@
              - 2 * inputs.casing
              + (1 - inputs.panes) * inputs.muntin) / inputs.panes;
 
+        const paneWidthField = document.getElementById('paneWidth');
+
         setBadness(paneWidthField, !isValid(inputs.paneWidth));
 
-        paneWidthField.innerText = (Number.isNaN(inputs.paneWidth)
+        paneWidthField.textContent = (Number.isNaN(inputs.paneWidth)
                                         ? `?${HAIRSP}?${HAIRSP}?`
                                         : inputs.paneWidth.toFixed(4));
     }
@@ -121,30 +119,80 @@
         }
     }
 
+    // Returns true if the drawing could be updated, false otherwise.
     function updateDrawing() {
-        if (!Number.isNaN(inputs.casing)) {
-            inputs.paneHeight = inputs.totalHeight - 2 * inputs.casing;
-            const heightOk = isValid(inputs.paneHeight);
-            setParentBadness(totalHeightField, !heightOk);
+        inputs.paneHeight = inputs.totalHeight - 2 * inputs.casing;
 
-            if (!Number.isNaN(inputs.scale) && heightOk
-                                            && isValid(inputs.paneWidth)) {
-                const scaled = getScaledDrawingParameters();
-                resetDrawing(scaled);
-                populateDrawing(scaled);
-                setBadness(drawing.node, false);
-                return;
+        if (!isValid(inputs.paneHeight)) {
+            if (!Number.isNaN(inputs.paneHeight)) {
+                // Computed pane height is invalid, but the given casing width
+                // is allowed. So the given total height is the problem.
+                setParentBadness(document.getElementById('totalHeight'), true);
             }
+
+            return false;
         }
 
-        if (drawing !== null) {
-            setBadness(drawing.node, true);
+        setParentBadness(document.getElementById('totalHeight'), false);
+
+        if (Number.isNaN(inputs.scale) || !isValid(inputs.paneWidth)) {
+            return false;
+        }
+
+        const scaled = getScaledDrawingParameters();
+        resetDrawing(scaled);
+        populateDrawing(scaled);
+        return true;
+    }
+
+    function getBadFieldShortNames() {
+        return [...document.getElementsByTagName('fieldset')]
+            .filter(fieldset => fieldset.classList.contains('bad'))
+            .map(fieldset => fieldset.dataset.shortname);
+    }
+
+    function asHumanReadableList(phrases) {
+        switch (phrases.length) {
+        case 0:
+            throw "Can't make a human-readable list of zero phrases.";
+        case 1:
+            return phrases[0];
+        case 2:
+            return phrases.join(' and ');
+        default:
+            return `${phrases.slice(0, -1).join(', ')}, `
+                 + `and ${phrases[phrases.length - 1]}`;
         }
     }
 
     function updateOutput() {
         updateResult();
-        updateDrawing();
+
+        if (updateDrawing()) {
+            document.getElementById('errorMessage').hidden = true;
+            setBadness(drawing.node, false);
+        } else {
+            document.getElementById('errorMessage').hidden = false;
+
+            const shortnames = getBadFieldShortNames();
+
+            if (shortnames.length === 0) {
+                document.getElementById('errorDetail').hidden = true;
+                document.getElementById('errorBug').hidden = false;
+            } else {
+                const errorDetail = document.getElementById('errorDetail');
+                errorDetail.hidden = false;
+                errorDetail.textContent =
+                    `Please check ${asHumanReadableList(shortnames)}.`;
+            }
+
+            if (drawing === null) {
+                document.getElementById('errorNote').hidden = true;
+            } else {
+                document.getElementById('errorNote').hidden = false;
+                setBadness(drawing.node, true);
+            }
+        }
     }
 
     function handleInput(e) {

@@ -31,7 +31,7 @@ body {
 
 h1 {
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   margin-bottom: 0;
 }
 
@@ -89,7 +89,12 @@ b {
 
 .github-fork-ribbon::after {
   font-family: 'Selawik', 'IBM Plex Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  letter-spacing: 0.03em;
+  letter-spacing: .03em;
+}
+
+.error {
+  color: darkred;
+  margin-bottom: .25rem;
 }
 
 .katex {
