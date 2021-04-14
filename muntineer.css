@@ -92,9 +92,26 @@ b {
   letter-spacing: .03em;
 }
 
+.status {
+  color: green;
+  font-size: .9rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.status.bad {
+  color: darkred;
+}
+
 .katex {
   color: #444444;
   font-size: 1.1em;
+}
+
+.status.bad .katex {
+  color: darkred;
+  font-size: 1.16em;
+  vertical-align: 2%;
 }
 
 .result {
@@ -107,15 +124,4 @@ b {
 
 .result.bad {
   color: red;
-}
-
-.status {
-  color: green;
-  font-size: .9rem;
-  font-weight: 400;
-  margin-top: 0;
-}
-
-.status.bad {
-  color: darkred;
 }

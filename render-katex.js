@@ -16,10 +16,16 @@
 (function () {
     'use strict';
 
-    renderMathInElement(document.body, {
+    const CONFIGURATION = Object.freeze({
         delimiters: [
             {left: '$$', right: '$$', display: true},
             {left: '$', right: '$', display: false},
         ],
     });
+
+    window.renderFormulas = function (element) {
+        renderMathInElement(element, CONFIGURATION);
+    };
+
+    renderFormulas(document.body);
 })();

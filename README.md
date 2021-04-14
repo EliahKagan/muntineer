@@ -64,14 +64,3 @@ The dependencies, and their licenses, are:
 - [IBM Plex](https://www.ibm.com/plex/), designed for IBM by Mike Abbink and
   the [Bold Monday](https://boldmonday.com/custom/ibm/) team ([SIL OFL
   1.1](https://github.com/IBM/plex/blob/master/LICENSE.txt))
-
-## Known Bugs
-
-**A major bug impacts accessibility:** red outlines, and for the SVG image *the
-distinction between a green or red outline*, are currently the only way the
-interface informs the user of malformed or unusable input values. To fix this,
-another way to inform the user of this should be added, and (whether or not the
-color scheme is also changed) the current visual hints should be secondary.
-
-Though not really a bug, it would be nice if this supported multiple rows of
-panes.

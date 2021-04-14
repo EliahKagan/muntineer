@@ -175,29 +175,40 @@
         if (shortnames.length > 0) {
             return `Check ${asHumanReadableList(shortnames)}`;
         } else if (inputs.paneWidth <= 0) {
-            return '$p$ must be positive';
+            return 'Need $p > 0$';
         } else {
             return `No details ${CH.NDASH} this is a bug`;
         }
     }
 
     function buildErrorMessage() {
-        // FIXME: Apply KaTeX formatting to buildErrorDetail() return value.
         const prefix = `Can${CH.RSQUO}t draw window: ${buildErrorDetail()}.`;
         return drawing === null ? prefix : prefix + ' (Old drawing shown.)';
     }
 
     function updateOutput() {
         updateResult();
-        const ok = updateDrawing();
-
-        if (drawing !== null) {
-            setBadness(drawing.node, !ok);
-        }
 
         const status = document.getElementById('statusMessage');
-        setBadness(status, !ok);
-        status.textContent = (ok ? "OK" : buildErrorMessage());
+
+        if (updateDrawing()) {
+            setBadness(drawing.node, false);
+
+            setBadness(status, false);
+            status.textContent = 'OK';
+            status.title =
+                'The current inputs were illustrated with no errors.';
+        } else {
+            if (drawing !== null) {
+                setBadness(drawing.node, true);
+            }
+
+            setBadness(status, true);
+            status.textContent = buildErrorMessage();
+            renderFormulas(status);
+            status.title = 'An error occurred. The current inputs could not'
+                         + ' be illustrated.';
+        }
     }
 
     function handleInput(e) {
