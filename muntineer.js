@@ -16,22 +16,26 @@
 (function() {
     'use strict';
 
-    const HAIRSP = '\u200a';
+    const CH = Object.freeze({
+        HAIRSP: '\u200a',
+        NDASH: '\u2013',
+        RSQUO: '\u2019',
+    });
 
-    const COLORS = {
+    const COLORS = Object.freeze({
         CASING: '#414a4c',
         MUNTIN: '#414a4c', // For now, casing and muntin have the same color.
         PANE: '#d7ecff',
-    };
+    });
 
-    const SCALABLE_PARAMETERS = [
+    const SCALABLE_PARAMETERS = Object.freeze([
         'totalHeight',
         'totalWidth',
         'casing',
         'muntin',
         'paneWidth',
         'paneHeight',
-    ];
+    ]);
 
     const inputs = {};
     let drawing = null;
@@ -78,7 +82,7 @@
         setBadness(paneWidthField, !isValid(inputs.paneWidth));
 
         paneWidthField.textContent = (Number.isNaN(inputs.paneWidth)
-                                        ? `?${HAIRSP}?${HAIRSP}?`
+                                        ? `?${CH.HAIRSP}?${CH.HAIRSP}?`
                                         : inputs.paneWidth.toFixed(4));
     }
 
@@ -165,34 +169,35 @@
         }
     }
 
+    function buildErrorDetail() {
+        const shortnames = getBadFieldShortNames();
+
+        if (shortnames.length > 0) {
+            return `Check ${asHumanReadableList(shortnames)}`;
+        } else if (inputs.paneWidth <= 0) {
+            return '$p$ must be positive';
+        } else {
+            return `No details ${CH.NDASH} this is a bug`;
+        }
+    }
+
+    function buildErrorMessage() {
+        // FIXME: Apply KaTeX formatting to buildErrorDetail() return value.
+        const prefix = `Can${CH.RSQUO}t draw window: ${buildErrorDetail()}.`;
+        return drawing === null ? prefix : prefix + ' (Old drawing shown.)';
+    }
+
     function updateOutput() {
         updateResult();
+        const ok = updateDrawing();
 
-        if (updateDrawing()) {
-            document.getElementById('errorMessage').hidden = true;
-            setBadness(drawing.node, false);
-        } else {
-            document.getElementById('errorMessage').hidden = false;
-
-            const shortnames = getBadFieldShortNames();
-
-            if (shortnames.length === 0) {
-                document.getElementById('errorDetail').hidden = true;
-                document.getElementById('errorBug').hidden = false;
-            } else {
-                const errorDetail = document.getElementById('errorDetail');
-                errorDetail.hidden = false;
-                errorDetail.textContent =
-                    `Please check ${asHumanReadableList(shortnames)}.`;
-            }
-
-            if (drawing === null) {
-                document.getElementById('errorNote').hidden = true;
-            } else {
-                document.getElementById('errorNote').hidden = false;
-                setBadness(drawing.node, true);
-            }
+        if (drawing !== null) {
+            setBadness(drawing.node, !ok);
         }
+
+        const status = document.getElementById('statusMessage');
+        setBadness(status, !ok);
+        status.textContent = (ok ? "OK" : buildErrorMessage());
     }
 
     function handleInput(e) {

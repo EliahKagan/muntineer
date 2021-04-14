@@ -92,11 +92,6 @@ b {
   letter-spacing: .03em;
 }
 
-.error {
-  color: darkred;
-  margin-bottom: .25rem;
-}
-
 .katex {
   color: #444444;
   font-size: 1.1em;
@@ -112,4 +107,15 @@ b {
 
 .result.bad {
   color: red;
+}
+
+.status {
+  color: green;
+  font-size: .9rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.status.bad {
+  color: darkred;
 }
