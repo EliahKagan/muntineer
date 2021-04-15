@@ -54,6 +54,16 @@ fieldset.bad {
   border-color: red;
 }
 
+@media (max-width: 400px) {
+  form {
+    margin-left: 0;
+  }
+
+  fieldset {
+    margin-left: 0;
+  }
+}
+
 label {
   float: left;
   width: 11rem;
