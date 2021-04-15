@@ -129,8 +129,8 @@
 
         if (!isValid(inputs.paneHeight)) {
             if (!Number.isNaN(inputs.paneHeight)) {
-                // Computed pane height is invalid, but the given casing width
-                // is allowed. So the given total height is the problem.
+                // The computed pane height is invalid, but the given casing
+                // width is allowed. So the given total height is the problem.
                 setParentBadness(document.getElementById('totalHeight'), true);
             }
 
