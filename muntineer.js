@@ -222,4 +222,15 @@
     }
 
     updateOutput();
+
+    const goToTop = document.getElementById('go-to-top');
+    const goToBottom = document.getElementById('go-to-bottom');
+
+    goToTop.addEventListener('click', function () {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    goToBottom.addEventListener('click', function () {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    });
 })();

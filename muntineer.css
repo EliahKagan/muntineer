@@ -54,16 +54,6 @@ fieldset.bad {
   border-color: red;
 }
 
-@media (max-width: 400px) {
-  body {
-    padding: 0 5px;
-  }
-
-  form, fieldset {
-    margin-left: 0;
-  }
-}
-
 label {
   float: left;
   width: 11rem;
@@ -134,4 +124,45 @@ b {
 
 .result.bad {
   color: red;
+}
+
+nav {
+  bottom: 0;
+  padding: .5rem;
+  position: fixed;
+  right: 0;
+}
+
+nav>div>button {
+  background-color: inherit;
+  border: none;
+  color: #200000;
+  font-size: 2.5rem;
+  outline: none;
+  opacity: .75;
+  text-shadow: 2px 2px grey;
+}
+
+nav>div>button:hover {
+  opacity: .85;
+}
+
+nav>div>button:active {
+  color: black;
+  opacity: 1;
+  text-shadow: none;
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 0 5px;
+  }
+
+  form, fieldset {
+    margin-left: 0;
+  }
+
+  nav>div>button {
+    font-size: 2rem;
+  }
 }
