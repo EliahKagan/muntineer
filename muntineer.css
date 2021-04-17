@@ -162,7 +162,22 @@ nav>div>button:active {
     margin-left: 0;
   }
 
+  nav {
+    left: 0;
+    right: auto;
+  }
+
   nav>div>button {
     font-size: 2rem;
+    opacity: .5;
+  }
+
+  nav>div>button:hover {
+    opacity: .65;
+  }
+
+  nav>div>button:active {
+    color: #200000;
+    opacity: .8;
   }
 }
