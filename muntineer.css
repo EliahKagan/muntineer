@@ -181,3 +181,11 @@ nav>div>button:active {
     opacity: .8;
   }
 }
+
+.note {
+  color: darkred;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: .75em;
+  letter-spacing: 0;
+  vertical-align: 3%;
+}
