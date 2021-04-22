@@ -64,3 +64,12 @@ The dependencies, and their licenses, are:
 - [IBM Plex](https://www.ibm.com/plex/), designed for IBM by Mike Abbink and
   the [Bold Monday](https://boldmonday.com/custom/ibm/) team ([SIL OFL
   1.1](https://github.com/IBM/plex/blob/master/LICENSE.txt))
+
+## Acknowledgements
+
+I&rsquo;d like to thank:
+
+- [Zanna Star](https://github.com/ZannaStar) for discussions of architecture
+  without which muntineer would not exist, and for improving the defaults to
+  make a much nicer (and more realistic) window.
+- The authors/contributors of the dependencies listed above.
