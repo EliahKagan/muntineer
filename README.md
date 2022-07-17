@@ -46,7 +46,7 @@ though they are all free software.
 
 The dependencies, and their licenses, are:
 
-- [SVG.js](https://svgjs.com) 3.0.16 by Wout Fierens ([MIT
+- [SVG.js](https://svgjs.dev/docs/3.0/) 3.0.16 by Wout Fierens ([MIT
   License](https://github.com/svgdotjs/svg.js/blob/3.0.16/LICENSE.txt))
 - [KaTeX](https://katex.org/) 0.13.2 from Khan Academy, by Emily Eisenberg,
   Sophie Alpert, et al. ([MIT
