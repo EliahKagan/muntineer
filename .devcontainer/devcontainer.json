@@ -1,0 +1,24 @@
+{
+    "name": "muntineer",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye",
+    "features": {
+        "ghcr.io/guiyomh/features/vim": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bierner.markdown-preview-github-styles",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "ms-vsliveshare.vsliveshare",
+                "ritwickdey.LiveServer",
+                "stkb.rewrap",
+                "streetsidesoftware.code-spell-checker"
+            ],
+            "settings": {
+                "gitlens.showWelcomeOnInstall": false,
+                "gitlens.showWhatsNewAfterUpgrades": false
+            }
+        }
+    }
+}
