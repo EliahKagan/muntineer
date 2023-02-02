@@ -1,0 +1,4 @@
+{
+    "name": "muntineer",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye"
+}
