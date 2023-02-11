@@ -58,7 +58,7 @@ The dependencies, and their licenses, are:
   ribbon](https://simonwhitaker.github.io/github-fork-ribbon-css/) 0.2.3 by
   Simon Whitaker ([MIT
   License](https://github.com/simonwhitaker/github-fork-ribbon-css/blob/0.2.3/LICENSE))
-- [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik),
+- [Selawik](https://learn.microsoft.com/en-us/typography/font-list/selawik),
   designed for Microsoft by Aaron Bell ([SIL OFL
   1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
 - [IBM Plex](https://www.ibm.com/plex/), designed for IBM by Mike Abbink and
