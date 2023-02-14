@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: 0BSD
+
+# Shell scripts need LF (Unix-style) line endings.
+/.devcontainer/postCreate text eol=lf
