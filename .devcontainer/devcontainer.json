@@ -1,0 +1,33 @@
+{
+    "name": "muntineer",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+    "features": {
+        "ghcr.io/guiyomh/features/vim": {},
+        "ghcr.io/meaningful-ooo/devcontainer-features/fish:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bierner.markdown-preview-github-styles",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github",
+                "mhutchie.git-graph",
+                "ms-vsliveshare.vsliveshare",
+                "ritwickdey.LiveServer",
+                "stkb.rewrap",
+                "streetsidesoftware.code-spell-checker",
+                "timonwong.shellcheck"
+            ],
+            "settings": {
+                "gitlens.showWelcomeOnInstall": false,
+                "gitlens.showWhatsNewAfterUpgrades": false
+            }
+        }
+    },
+    "postCreateCommand": [".devcontainer/postCreate"],
+    "waitFor": "postCreateCommand",
+    "containerEnv": {
+        "SHELL": "/usr/bin/fish"
+    }
+}

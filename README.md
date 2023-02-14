@@ -20,14 +20,13 @@
 *Written in 2021 by Eliah Kagan &lt;degeneracypressure@gmail.com&gt;.*
 
 **muntineer** computes the width of window panes given total window width,
-number of panes in a row, and casing and muntin thicknesses, and it
-illustrates the computation with an SVG visualization.
+number of panes in a row, and casing and muntin thicknesses, and it illustrates
+the computation with an SVG visualization.
 
 muntineer is [licensed](LICENSE) under
-[0BSD](https://spdx.org/licenses/0BSD.html) (&ldquo;Zero-Clause BSD
-License,&rdquo; also called the [Free Public License
-1.0.0](https://opensource.org/licenses/0BSD)). Its dependencies are covered
-under other licenses, detailed below.
+[0BSD](https://spdx.org/licenses/0BSD.html) (“Zero-Clause BSD License,” also
+called the [Free Public License 1.0.0](https://opensource.org/licenses/0BSD)).
+Its dependencies are covered under other licenses, detailed below.
 
 [**Try muntineer on the web here.**](https://eliahkagan.github.io/muntineer/)
 
@@ -41,8 +40,8 @@ long as you're connected to the internet. None of them are provided in this
 repository.
 
 Please note that while this project is licensed under 0BSD (which is a
-&ldquo;public-domain equivalent&rdquo; license), its dependencies are not,
-though they are all free software.
+“public-domain equivalent” license), its dependencies are not, though they are
+all free software.
 
 The dependencies, and their licenses, are:
 
@@ -58,7 +57,7 @@ The dependencies, and their licenses, are:
   ribbon](https://simonwhitaker.github.io/github-fork-ribbon-css/) 0.2.3 by
   Simon Whitaker ([MIT
   License](https://github.com/simonwhitaker/github-fork-ribbon-css/blob/0.2.3/LICENSE))
-- [Selawik](https://docs.microsoft.com/en-us/typography/font-list/selawik),
+- [Selawik](https://learn.microsoft.com/en-us/typography/font-list/selawik),
   designed for Microsoft by Aaron Bell ([SIL OFL
   1.1](https://github.com/microsoft/Selawik/blob/master/LICENSE.txt))
 - [IBM Plex](https://www.ibm.com/plex/), designed for IBM by Mike Abbink and
@@ -67,7 +66,7 @@ The dependencies, and their licenses, are:
 
 ## Acknowledgements
 
-I&rsquo;d like to thank:
+I’d like to thank:
 
 - [Zanna Star](https://github.com/ZannaStar) for discussions of architecture
   without which muntineer would not exist, and for improving the defaults to
