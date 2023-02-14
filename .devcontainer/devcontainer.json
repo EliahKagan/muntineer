@@ -1,6 +1,6 @@
 {
     "name": "muntineer",
-    "image": "mcr.microsoft.com/devcontainers/typescript-node:16-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
     "features": {
         "ghcr.io/guiyomh/features/vim": {}
     },
