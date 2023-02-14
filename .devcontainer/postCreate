@@ -13,6 +13,8 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 
+set -eu
+
 nl() {
     printf '\n' >&2
 }
@@ -28,7 +30,7 @@ msg '...global git configuration customized.'
 
 nl
 msg 'Customizing fish (the friendly interactive shell)...'
-sudo chsh -s /usr/bin/fish vscode
+sudo chsh -s /usr/bin/fish "$USER"
 fish -c 'set -U __fish_git_prompt_color_cleanstate brgreen'
 fish -c 'set -U __fish_git_prompt_show_informative_status true'
 fish -c 'set -U __fish_git_prompt_showcolorhints true'
