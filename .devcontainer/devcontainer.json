@@ -8,7 +8,9 @@
         "vscode": {
             "extensions": [
                 "bierner.markdown-preview-github-styles",
+                "dbaeumer.vscode-eslint",
                 "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github",
                 "mhutchie.git-graph",
                 "ms-vsliveshare.vsliveshare",
                 "ritwickdey.LiveServer",
